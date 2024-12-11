@@ -104,8 +104,7 @@ namespace SerchAlgorthmsPrototypes
                 if (i < 3) c = i;
                 else if (i < 6) { r = 1; c = i - 3; }
                 else if (i >= 6) { r = 2; c = i - 6; }
-                if (MapMatrix[RandomRow + r, RandomCol + c] != 1 ||
-                        MapMatrix[RandomRow + r, RandomCol + c] != 2)
+                if (CheckBoundsAndStatrEnd(RandomRow + r, RandomCol + c))
                 {
                     MapMatrix[RandomRow + r, RandomCol + c] = 9;
                 }
@@ -117,7 +116,7 @@ namespace SerchAlgorthmsPrototypes
             Random rnd = new Random();
             r = 0;
             c = 0;
-            int collumOrRow = rnd.Next(1, 3);
+            int collumOrRow = rnd.Next(1, 5);
             int lenght = (int)SizeOfMap / 3;
 
             for (int i = lenght; i > 0; i--)
@@ -125,19 +124,33 @@ namespace SerchAlgorthmsPrototypes
                 if (collumOrRow == 1)
                 {
                     r = SizeOfMap - 1;
-                    if (MapMatrix[RandomRow, RandomCol] != 1 ||
-                            MapMatrix[RandomRow, RandomCol] != 2)
+                    if (CheckBoundsAndStatrEnd(RandomRow, RandomCol))
                     {
                         MapMatrix[r - i, RandomCol] = 9;
                     }
                 }
-                else
+                else if(collumOrRow == 2)
                 {
                     c = SizeOfMap - 1;
-                    if (MapMatrix[RandomRow, RandomCol] != 1 ||
-                        MapMatrix[RandomRow, RandomCol] != 2)
+                    if (CheckBoundsAndStatrEnd(RandomRow, RandomCol))
                     {
                         MapMatrix[RandomRow, c - i] = 9;
+                    }
+                }
+                else if (collumOrRow == 3)
+                {
+                    r = 0;
+                    if (CheckBoundsAndStatrEnd(RandomRow, RandomCol))
+                    {
+                        MapMatrix[r + i, RandomCol] = 9;
+                    }
+                }
+                else if (collumOrRow == 4)
+                {
+                    c = 0;
+                    if (CheckBoundsAndStatrEnd(RandomRow, RandomCol))
+                    {
+                        MapMatrix[RandomRow, c + i] = 9;
                     }
                 }
             }
@@ -151,38 +164,55 @@ namespace SerchAlgorthmsPrototypes
             {
                 if (HorV == 1)
                 {
-                    if (MapMatrix[RandomRow + r, RandomCol + c] != 1 ||
-                            MapMatrix[RandomRow + r, RandomCol + c] != 2)
+                    if (CheckBoundsAndStatrEnd(RandomRow + r, RandomCol + c))
                     {
                         if (i < 5)
                         {
-                            if (RandomRow + i! < SizeOfMap - 1)
+                            if (CheckBoundsAndStatrEnd(RandomRow + i, RandomCol))
+                            {
                                 MapMatrix[RandomRow + i, RandomCol] = 9;
+                            }
                         }
                         else
                         {
-                            if (RandomCol + i - 5! < SizeOfMap - 1)
+                            if (CheckBoundsAndStatrEnd(RandomRow + 2, RandomCol + i - 5))
+                            {
                                 MapMatrix[RandomRow + 2, RandomCol + i - 5] = 9;
+                            }
                         }
                     }
                 }
                 else
                 {
-                    if (true)
+                    if (CheckBoundsAndStatrEnd(RandomRow + r, RandomCol + c))
                     {
                         if (i < 5)
                         {
-                            if (RandomCol + +i! < SizeOfMap - 1)
+                            if (CheckBoundsAndStatrEnd(RandomRow, RandomCol + i))
+                            {
                                 MapMatrix[RandomRow, RandomCol + i] = 9;
+                            }
                         }
                         else
                         {
-                            if (RandomRow + i - 5! < SizeOfMap - 1)
+                            if (CheckBoundsAndStatrEnd(RandomRow + i - 5, RandomCol + 2))
+                            {
                                 MapMatrix[RandomRow + i - 5, RandomCol + 2] = 9;
+                            }
                         }
                     }
                 }
             }
+        }
+    
+        private bool CheckBoundsAndStatrEnd(int x, int y)
+        {
+            if (x < 0 || y < 0) return false;
+            if (x >= SizeOfMap || y >= SizeOfMap) return false;
+            if (MapMatrix[x,y] == 1) return false;
+            if (MapMatrix[x,y] == 2) return false;
+            
+            return true;
         }
     }
 }
