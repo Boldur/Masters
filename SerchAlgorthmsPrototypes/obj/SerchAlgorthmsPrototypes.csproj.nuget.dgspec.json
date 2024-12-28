@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cdabb\\OneDrive\\Desktop\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj": {}
+    "C:\\MastersTrsf\\AI_Principles\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cdabb\\OneDrive\\Desktop\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj": {
+    "C:\\MastersTrsf\\AI_Principles\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cdabb\\OneDrive\\Desktop\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj",
+        "projectUniqueName": "C:\\MastersTrsf\\AI_Principles\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj",
         "projectName": "SerchAlgorthmsPrototypes",
-        "projectPath": "C:\\Users\\cdabb\\OneDrive\\Desktop\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj",
+        "projectPath": "C:\\MastersTrsf\\AI_Principles\\SerchAlgorthmsPrototypes\\SerchAlgorthmsPrototypes.csproj",
         "packagesPath": "C:\\Users\\cdabb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cdabb\\OneDrive\\Desktop\\SerchAlgorthmsPrototypes\\obj\\",
+        "outputPath": "C:\\MastersTrsf\\AI_Principles\\SerchAlgorthmsPrototypes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
