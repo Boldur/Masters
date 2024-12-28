@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SerchAlgorthmsPrototypes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d0cff5b2219cb6999e1a7f717be5082243d044e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SerchAlgorthmsPrototypes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SerchAlgorthmsPrototypes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

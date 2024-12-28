@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,28 +9,15 @@ namespace SerchAlgorthmsPrototypes
 {
     public class MatrixVisualizer : Form
     {
-        private int[,] matrix = new int[,]
-        {
-        { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 ,9 },
-        { 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 1, 0, 0, 9, 9, 9, 9, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 9 },
-        { 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9 },
-        { 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9 },
-        { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 }
-        };
+        int[,] matrix;  
 
         private const int CellSize = 40; // Size of each cell in pixels
 
-        public MatrixVisualizer()
-        {
+        public MatrixVisualizer(int[,] matrix)
+        {   
+            this.matrix = matrix;
             this.Text = "Matrix Visualizer";
-            this.Size = new Size(500, 500);
+            this.Size = new Size(1000, 1000);
             this.DoubleBuffered = true; // Prevent flickering
             this.Paint += MatrixVisualizer_Paint;
         }
@@ -53,10 +41,19 @@ namespace SerchAlgorthmsPrototypes
                             cellColor = Color.White; // Free space
                             break;
                         case 1:
-                            cellColor = Color.Green; // Start
+                            cellColor = Color.Blue; // Start
                             break;
                         case 2:
                             cellColor = Color.Red; // Goal
+                            break;
+                        case 3:
+                            cellColor = Color.Yellow; // searched
+                            break;
+                        case 4:
+                            cellColor = Color.Green; // searched
+                            break;
+                        case 5:
+                            cellColor = Color.Gold;
                             break;
                         default:
                             cellColor = Color.Gray; // Default (if unexpected values exist)
